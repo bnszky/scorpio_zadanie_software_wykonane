@@ -68,6 +68,6 @@ roslaunch virtual_dc_motor virtual_dc_motor.launch
 1. Pobiera dane z topicu '/virtual_dc_motor_driver/get_velocity' i '/virtual_dc_motor_controller/set_velocity_goal'
 2. Płynnie przechodzi do prędkości docelowej (porównując aktualną prędkość do docelowej i zmieniając oraz wysyłając odpowiedni impuls na topic '/virtual_cd_motor/set_cs')
 3. Nie zmienia impulsu, jeśli odchylenie od docelowej prędkości jest mniejsze zmiennej ACC_RANGE
-4. Zmiana sygnału występuje domyślnie z częstotliwością 200HZ (FREQUENCY)
+4. Zmiana sygnału występuje domyślnie z częstotliwością 200 HZ (FREQUENCY)
 
-** Oba node'y powinny uruchamiać się domyślnie przy wykonaniu 'roslaunch virtual_dc_motor virtual_dc_motor.launch' **
+**Oba node'y powinny uruchamiać się domyślnie przy wykonaniu 'roslaunch virtual_dc_motor virtual_dc_motor.launch'**
