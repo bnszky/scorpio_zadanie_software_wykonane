@@ -57,3 +57,17 @@ roslaunch virtual_dc_motor virtual_dc_motor.launch
 - Rozwiązane zadanie należy umieścić w repozytorium (np. GitHub) i przesłać linka do tego repozytorium na mail projekt@scorpio.pwr.edu.pl. Ewentualne pytania lub wątpliwości co do treści zadania można kierować na tego samego maila. Zadania przyjmujemy do 22.10.2023 do końca dnia.
 
 **Jeżeli będziesz miał jakiekolwiek wątpliwości i problemy z zadaniem śmiało skontaktuj się z nami! :)**
+
+**EDIT**
+
+## Node 'virtual_dc_motor_driver.py' ##
+1. Pobiera dane z topicu '/virtual_dc_motor/get_position'
+2. Na podstawie różnicy w położeniu w czasie oblicza przybliżone RPM i wypisuje na topic '/virtual_dc_motor_driver/get_velocity'
+
+## Node 'virtual_dc_motor_controller.py' ##
+1. Pobiera dane z topicu '/virtual_dc_motor_driver/get_velocity' i '/virtual_dc_motor_controller/set_velocity_goal'
+2. Płynnie przechodzi do prędkości docelowej (porównując aktualną prędkość do docelowej i zmieniając oraz wysyłając odpowiedni impuls na topic '/virtual_cd_motor/set_cs')
+3. Nie zmienia impulsu, jeśli odchylenie od docelowej prędkości jest mniejsze zmiennej ACC_RANGE
+4. Zmiana sygnału występuje domyślnie z częstotliwością 200HZ (FREQUENCY)
+
+** Oba node'y powinny uruchamiać się domyślnie przy wykonaniu 'roslaunch virtual_dc_motor virtual_dc_motor.launch' **
